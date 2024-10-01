@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumoichi</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'b Beach Ocean', sans-serif;
+            background: linear-gradient(135deg, #0004ff, #00e1ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 0.5s;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #0004ff;
+            background: white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.7s, transform 0.7s;
+        }
+
+        .button:hover {
+            background: #4c00ff;
+            transform: scale(2.2em);
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animasi latar belakang */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .triangle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 15s infinite;
+            mix-blend-mode: overlay;
+        }
+
+        .triangle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .square:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 70%;
+            left: 50%;
+            animation-delay: 3s;
+        }
+
+        .square:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            left: 80%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+
+    <div class="container">
+        <h1>Selamat Datang</h1>
+        <p>Biodata</p>
+        <a href="index.html" class="button">Start</a>
+    </div>
+</body>
+</html>
